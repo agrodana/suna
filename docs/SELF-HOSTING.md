@@ -188,7 +188,7 @@ MCP_CREDENTIAL_ENCRYPTION_KEY=your-generated-encryption-key
 RAPID_API_KEY=your-rapidapi-key
 # MCP server configurations in database
 
-NEXT_PUBLIC_URL=http://localhost:3030
+NEXT_PUBLIC_URL=http://157.180.120.73:3030
 ```
 
 ### Frontend Configuration (.env.local)
@@ -203,8 +203,8 @@ Example configuration:
 ```sh
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-NEXT_PUBLIC_BACKEND_URL=http://localhost:8000/api
-NEXT_PUBLIC_URL=http://localhost:3030
+NEXT_PUBLIC_BACKEND_URL=http://157.180.120.73:8000/api
+NEXT_PUBLIC_URL=http://157.180.120.73:3030
 NEXT_PUBLIC_ENV_MODE=LOCAL
 ```
 

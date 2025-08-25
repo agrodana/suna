@@ -103,7 +103,7 @@ async def create_sandbox(password: str, project_id: str = None) -> AsyncSandbox:
             "CHROME_PATH": "",
             "CHROME_USER_DATA": "",
             "CHROME_DEBUGGING_PORT": "9222",
-            "CHROME_DEBUGGING_HOST": "localhost",
+            "CHROME_DEBUGGING_HOST": "157.180.120.73",
             "CHROME_CDP": ""
         },
         resources=Resources(

@@ -35,7 +35,7 @@ USER nextjs
 
 # Health check implementation
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:8000/health || exit 1
+  CMD curl -f http://157.180.120.73:8000/health || exit 1
 ```
 
 ### Docker Compose Patterns
@@ -124,10 +124,10 @@ networks:
 ```bash
 # .env.local (development)
 NODE_ENV=development
-NEXT_PUBLIC_SUPABASE_URL=http://localhost:54321
+NEXT_PUBLIC_SUPABASE_URL=http://157.180.120.73:54321
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-DATABASE_URL=postgresql://user:pass@localhost:5432/suna_dev
-REDIS_URL=redis://localhost:6379
+DATABASE_URL=postgresql://user:pass@157.180.120.73:5432/suna_dev
+REDIS_URL=redis://157.180.120.73:6379
 LOG_LEVEL=debug
 
 # .env.production
@@ -179,9 +179,9 @@ docker-compose -f docker-compose.dev.yml exec backend python -m alembic upgrade 
 echo "✅ Database migrations completed"
 
 echo "🚀 Development environment is ready!"
-echo "Frontend: http://localhost:3030"
-echo "Backend: http://localhost:8000"
-echo "Redis: localhost:6379"
+echo "Frontend: http://157.180.120.73:3030"
+echo "Backend: http://157.180.120.73:8000"
+echo "Redis: 157.180.120.73:6379"
 ```
 
 ## Deployment Strategies

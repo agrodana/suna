@@ -119,7 +119,7 @@ class SandboxBrowserTool(SandboxToolsBase):
             await self._ensure_sandbox()
             
             # Build the curl command
-            url = f"http://localhost:8003/api/automation/{endpoint}"
+            url = f"http://157.180.120.73:8003/api/automation/{endpoint}"
             
             if method == "GET" and params:
                 query_params = "&".join([f"{k}={v}" for k, v in params.items()])

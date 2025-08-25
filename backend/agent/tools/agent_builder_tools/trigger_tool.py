@@ -598,7 +598,7 @@ if config.ENV_MODE != EnvMode.PRODUCTION:
                 pass
 
             # Upsert trigger instance with webhook
-            base_url = os.getenv("WEBHOOK_BASE_URL", "http://localhost:8000").rstrip("/")
+            base_url = os.getenv("WEBHOOK_BASE_URL", "http://157.180.120.73:8000").rstrip("/")
             secret = os.getenv("COMPOSIO_WEBHOOK_SECRET", "")
             webhook_headers: Dict[str, str] = {"X-Composio-Secret": secret} if secret else {}
             vercel_bypass = os.getenv("VERCEL_PROTECTION_BYPASS_KEY", "")

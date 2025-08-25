@@ -137,7 +137,7 @@ class BrowserTool(SandboxToolsBase):
             
             
             # Simple health check curl command
-            curl_cmd = "curl -s -X GET 'http://localhost:8004/api' -H 'Content-Type: application/json'"
+            curl_cmd = "curl -s -X GET 'http://157.180.120.73:8004/api' -H 'Content-Type: application/json'"
             
             logger.debug(f"Checking Stagehand API health with: {curl_cmd}")
             
@@ -152,7 +152,7 @@ class BrowserTool(SandboxToolsBase):
                         # If the browser api is not healthy, we need to restart the browser api
                         model_api_key = config.GEMINI_API_KEY
 
-                        response = await self.sandbox.process.exec(f"curl -X POST 'http://localhost:8004/api/init' -H 'Content-Type: application/json' -d '{{\"api_key\": \"{model_api_key}\"}}'", timeout=90)
+                        response = await self.sandbox.process.exec(f"curl -X POST 'http://157.180.120.73:8004/api/init' -H 'Content-Type: application/json' -d '{{\"api_key\": \"{model_api_key}\"}}'", timeout=90)
                         if response.exit_code == 0:
                             logger.debug("Stagehand API server restarted successfully")
                             return True
@@ -191,7 +191,7 @@ class BrowserTool(SandboxToolsBase):
             
             
             # Build the curl command to call the local Stagehand API
-            url = f"http://localhost:8004/api/{endpoint}"  # Fixed localhost as curl runs inside container
+            url = f"http://157.180.120.73:8004/api/{endpoint}"  # Fixed 157.180.120.73 as curl runs inside container
             
             if method == "GET" and params:
                 query_params = "&".join([f"{k}={v}" for k, v in params.items()])

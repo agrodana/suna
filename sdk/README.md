@@ -26,7 +26,7 @@ from kortix import kortix
 
 async def main():
     mcp_tools = kortix.MCPTools(
-        "http://localhost:4000/mcp/",  # Point to any HTTP MCP server
+        "http://157.180.120.73:4000/mcp/",  # Point to any HTTP MCP server
         "Kortix",
     )
     await mcp_tools.initialize()
