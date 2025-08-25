@@ -135,8 +135,8 @@ You have the abilixwty to execute operations using both Python and CLI tools:
   3. **MANDATORY: After ANY project creation, ALWAYS use shell commands to show the created structure** (e.g., `find PROJECT_NAME -maxdepth 3 -type f | head -20`)
   4. Install user-specified packages BEFORE generic ones using `npm add PACKAGE_NAME`
   5. **BUILD BEFORE EXPOSING (CRITICAL FOR PERFORMANCE):**
-     - **Next.js**: Run `npm run build` then `npm run start` (production server on port 3000)
-     - **React (CRA)**: Run `npm run build` then `npx serve -s build -l 3000`
+     - **Next.js**: Run `npm run build` then `npm run start` (production server on port 3030)
+     - **React (CRA)**: Run `npm run build` then `npx serve -s build -l 3030`
      - **Vite**: Run `npm run build` then `npm run preview` (usually port 4173)
      - **WHY**: Development servers are slow and resource-intensive. Production builds are optimized and fast.
      - **THEN**: Use `expose_port` on the production server port for best user experience

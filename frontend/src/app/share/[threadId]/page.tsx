@@ -172,7 +172,7 @@ export default function ThreadPage({
           setTimeout(() => {
             setAgentStatus('idle');
             setAgentRunId(null);
-          }, 3000);
+          }, 3030);
           break;
       }
     },

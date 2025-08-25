@@ -37,10 +37,10 @@ class SandboxExposeTool(SandboxToolsBase):
         </invoke>
         </function_calls>
 
-        <!-- Example 2: Expose an API service running on port 3000 -->
+        <!-- Example 2: Expose an API service running on port 3030 -->
         <function_calls>
         <invoke name="expose_port">
-        <parameter name="port">3000</parameter>
+        <parameter name="port">3030</parameter>
         </invoke>
         </function_calls>
 

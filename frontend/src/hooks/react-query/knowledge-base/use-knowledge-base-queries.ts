@@ -303,7 +303,7 @@ export function useAgentProcessingJobs(agentId: string) {
         job.status === 'processing' || job.status === 'pending'
       );
       
-      const nextInterval = hasActiveJobs ? 3000 : 30000;
+      const nextInterval = hasActiveJobs ? 3030 : 30000;
       // If there are active jobs, poll every 3 seconds
       // If no active jobs, poll every 30 seconds (much less frequent)
       return nextInterval;

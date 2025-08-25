@@ -178,7 +178,7 @@ export const handleNetworkError = (error: any, context?: ErrorContext): void => 
 export const handleApiSuccess = (message: string, description?: string): void => {
   toast.success(message, {
     description,
-    duration: 3000,
+    duration: 3030,
   });
 };
 
@@ -192,6 +192,6 @@ export const handleApiWarning = (message: string, description?: string): void =>
 export const handleApiInfo = (message: string, description?: string): void => {
   toast.info(message, {
     description,
-    duration: 3000,
+    duration: 3030,
   });
 }; 

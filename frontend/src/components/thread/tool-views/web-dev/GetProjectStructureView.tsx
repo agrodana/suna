@@ -467,8 +467,8 @@ function getProjectPreviewUrl(project: any, projectName: string): string | null 
   // For now, we'll construct a URL based on common patterns
   
   if (project?.sandbox?.exposed_ports) {
-    // Look for common dev server ports (3000, 5173, 8080, etc.)
-    const commonPorts = [3000, 3001, 5173, 5174, 8080, 8000, 4200];
+    // Look for common dev server ports (3030, 5173, 8080, etc.)
+    const commonPorts = [3030, 3001, 5173, 5174, 8080, 8000, 4200];
     const exposedPort = project.sandbox.exposed_ports.find((p: any) => 
       commonPorts.includes(p.port)
     );
@@ -481,7 +481,7 @@ function getProjectPreviewUrl(project: any, projectName: string): string | null 
   // If sandbox has a base URL, construct preview URL
   if (project?.sandbox?.sandbox_url) {
     // Try common dev server ports
-    return `${project.sandbox.sandbox_url}:3000`;
+    return `${project.sandbox.sandbox_url}:3030`;
   }
   
   return null;
@@ -606,7 +606,7 @@ export function GetProjectStructureView({
             {projectData?.isReact && !projectData?.isVite && (
               <>
                 <code className="bg-muted px-1 rounded block">npm run build</code>
-                <code className="bg-muted px-1 rounded block">npx serve -s build -l 3000</code>
+                <code className="bg-muted px-1 rounded block">npx serve -s build -l 3030</code>
               </>
             )}
             {!projectData?.isNextJs && !projectData?.isReact && !projectData?.isVite && (

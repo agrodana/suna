@@ -17,7 +17,7 @@ class SandboxWebDevTool(SandboxToolsBase):
     DEFAULT_TIMEOUT = 60
     BUILD_TIMEOUT = 1800
     INSTALL_TIMEOUT = 900
-    DEFAULT_PORT = 3000
+    DEFAULT_PORT = 3030
 
     def __init__(self, project_id: str, thread_id: str, thread_manager: ThreadManager):
         super().__init__(project_id, thread_manager)

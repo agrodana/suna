@@ -135,7 +135,7 @@ class PresentationToPDFAPI:
             await page.goto(file_url, wait_until="networkidle", timeout=30000)
             
             # Wait for fonts and dynamic content to load
-            await page.wait_for_timeout(3000)
+            await page.wait_for_timeout(3030)
             
             # Ensure exact slide dimensions
             await page.evaluate("""

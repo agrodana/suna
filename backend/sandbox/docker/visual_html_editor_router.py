@@ -1334,7 +1334,7 @@ def inject_editor_functionality(html_content: str, file_path: str) -> str:
                 
                 setTimeout(() => {{
                     notification.remove();
-                }}, 3000);
+                }}, 3030);
             }}
         }}
         

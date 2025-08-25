@@ -49,7 +49,7 @@ class ContextManager:
                 pass
         return False
     
-    def compress_message(self, msg_content: Union[str, dict], message_id: Optional[str] = None, max_length: int = 3000) -> Union[str, dict]:
+    def compress_message(self, msg_content: Union[str, dict], message_id: Optional[str] = None, max_length: int = 3030) -> Union[str, dict]:
         """Compress the message content."""
         if isinstance(msg_content, str):
             if len(msg_content) > max_length:
