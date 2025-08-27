@@ -322,6 +322,7 @@ export function useAgentStream(
             });
             callbacks.onAssistantChunk?.({ content: parsedContent.content });
           } else if (parsedMetadata.stream_status === 'complete') {
+            console.log('[Assistant Complete Message] ', message);
             setTextContent([]);
             setToolCall(null);
             if (message.message_id) callbacks.onMessage(message);
