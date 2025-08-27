@@ -264,19 +264,22 @@ export function useAgentStream(
         '{"type": "status", "status": "completed", "message": "Agent run completed successfully"}'
       ) {
         finalizeStream('completed', currentRunIdRef.current);
-        return;
+        // return;
       }
       if (
         processedData.includes('Run data not available for streaming') ||
         processedData.includes('Stream ended with status: completed')
       ) {
         finalizeStream('completed', currentRunIdRef.current);
-        return;
+        // return;
       }
 
       // --- Check for error messages first ---
       try {
         const jsonData = JSON.parse(processedData);
+
+        console.log(jsonData, "<<<<< jsonData");
+
         if (jsonData.status === 'error') {
           console.error('[useAgentStream] Received error status message:', jsonData);
           const errorMessage = jsonData.message || 'Unknown error occurred';
