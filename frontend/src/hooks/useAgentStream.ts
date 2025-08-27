@@ -299,12 +299,17 @@ export function useAgentStream(
         return;
       }
 
+      console.log(message, " <<<<< message");
+      
       const parsedContent = safeJsonParse<ParsedContent>(message.content, {});
       const parsedMetadata = safeJsonParse<ParsedMetadata>(
         message.metadata,
         {},
       );
 
+      console.log(parsedContent, " <<<<< parsedContent");
+      console.log(parsedMetadata, " <<<<< parsedMetadata");
+      
       // Update status to streaming if we receive a valid message
       if (status !== 'streaming') updateStatus('streaming');
 
