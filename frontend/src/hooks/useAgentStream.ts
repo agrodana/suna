@@ -582,11 +582,15 @@ export function useAgentStream(
         const cleanup = streamAgent(runId, {
           onMessage: (data) => {
             console.log('[Stream onMessage fired]', data);
+            console.log('[threadIdRef.current]', threadIdRef.current);
             // Ignore messages if threadId changed while the EventSource stayed open
             if (threadIdRef.current !== threadId) return;
             // Ignore messages if this is not the current run ID
+            console.log('[currentRunIdRef.current]', currentRunIdRef.current);
             if (currentRunIdRef.current !== runId) return;
+            console.log('<<<<< masuk handleStreamMessage');
             handleStreamMessage(data);
+            console.log('<<<<< selesai handleStreamMessage');
           },
           onError: (err) => {
             if (threadIdRef.current !== threadId) return;
