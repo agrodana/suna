@@ -376,14 +376,20 @@ export const getThreadAgent = async (threadId: string): Promise<ThreadAgentRespo
       },
     });
 
+    console.log(response,"<<<<< response utils.ts");
+
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
       throw new Error(errorData.message || `HTTP ${response.status}: ${response.statusText}`);
     }
 
     const agent = await response.json();
+
+    console.log(agent, "<<<<< agentResponse utils.ts");
+
     return agent;
   } catch (err) {
+    console.log("<<<<< error di utils.ts");
     console.error('Error fetching thread agent:', err);
     throw err;
   }
