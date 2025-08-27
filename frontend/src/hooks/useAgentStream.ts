@@ -581,6 +581,7 @@ export function useAgentStream(
         // Agent is running, proceed to create the stream
         const cleanup = streamAgent(runId, {
           onMessage: (data) => {
+            console.log('[Stream onMessage fired]', data);
             // Ignore messages if threadId changed while the EventSource stayed open
             if (threadIdRef.current !== threadId) return;
             // Ignore messages if this is not the current run ID

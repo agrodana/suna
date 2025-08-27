@@ -389,7 +389,7 @@ export const getThreadAgent = async (threadId: string): Promise<ThreadAgentRespo
 
     return agent;
   } catch (err) {
-    console.log("<<<<< error di utils.ts");
+    console.log(err, "<<<<< error di utils.ts");
     console.error('Error fetching thread agent:', err);
     throw err;
   }
