@@ -203,7 +203,7 @@ Example configuration:
 ```sh
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-NEXT_PUBLIC_BACKEND_URL=http://157.180.120.73:8000/api
+NEXT_PUBLIC_BACKEND_URL=http://157.180.120.73:8800/api
 NEXT_PUBLIC_URL=http://157.180.120.73:3030
 NEXT_PUBLIC_ENV_MODE=LOCAL
 ```
@@ -270,7 +270,7 @@ uv run dramatiq run_agent_background
 
    - Check Docker logs: `docker compose logs`
    - Ensure Docker is running correctly
-   - Verify port availability (3030 for frontend, 8000 for backend)
+   - Verify port availability (3030 for frontend, 8800 for backend)
 
 2. **Database connection issues**
 

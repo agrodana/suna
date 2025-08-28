@@ -95,7 +95,7 @@ const IntegrationIcon: React.FC<{
   useEffect(() => {
     if (extractedSlug && !hasError) {
       setIsLoading(true);
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://157.180.120.73:8000';
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://157.180.120.73:8800';
       fetch(`${backendUrl}/composio/toolkits/${extractedSlug}/icon`)
         .then(res => res.json())
         .then(data => {
@@ -242,7 +242,7 @@ export default function TemplateSharePage() {
   const { data: template, isLoading, error } = useQuery({
     queryKey: ['template-share', shareId],
     queryFn: async () => {
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://157.180.120.73:8000';
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://157.180.120.73:8800';
       const response = await fetch(`${backendUrl}/templates/share/${shareId}`);
       if (!response.ok) {
         throw new Error('Template not found');

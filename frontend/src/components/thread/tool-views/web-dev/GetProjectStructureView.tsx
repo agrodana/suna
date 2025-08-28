@@ -468,7 +468,7 @@ function getProjectPreviewUrl(project: any, projectName: string): string | null 
   
   if (project?.sandbox?.exposed_ports) {
     // Look for common dev server ports (3030, 5173, 8080, etc.)
-    const commonPorts = [3030, 3001, 5173, 5174, 8080, 8000, 4200];
+    const commonPorts = [3030, 3001, 5173, 5174, 8080, 8800, 4200];
     const exposedPort = project.sandbox.exposed_ports.find((p: any) => 
       commonPorts.includes(p.port)
     );
@@ -617,7 +617,7 @@ export function GetProjectStructureView({
             Then use the <code className="bg-muted px-1 rounded">expose_port</code> tool
           </p>
         </div>,
-        { duration: 8000 }
+        { duration: 8800 }
       );
     }
   };

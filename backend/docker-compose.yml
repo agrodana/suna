@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8800:8800"
     env_file:
       - .env
     volumes:
@@ -30,7 +30,7 @@ services:
         max-size: "10m"
         max-file: "3"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://157.180.120.73:8000/api/health"]
+      test: ["CMD", "curl", "-f", "http://157.180.120.73:8800/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3

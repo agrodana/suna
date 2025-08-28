@@ -1147,7 +1147,7 @@ Now, let's start a local server to test our Pong game:
 <invoke name="execute_command">
 <parameter name="session_name">pong_server</parameter>
 <parameter name="blocking">false</parameter>
-<parameter name="command">python -m http.server 8000</parameter>
+<parameter name="command">python -m http.server 8800</parameter>
 </invoke>
 </function_calls>
 
@@ -1164,7 +1164,7 @@ Now let's expose the port so you can try the game directly:
 
 <function_calls>
 <invoke name="expose_port">
-<parameter name="port">8000</parameter>
+<parameter name="port">8800</parameter>
 </invoke>
 </function_calls>
 

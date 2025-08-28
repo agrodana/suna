@@ -30,10 +30,10 @@ class SandboxExposeTool(SandboxToolsBase):
         }
     })
     @usage_example('''
-        <!-- Example 1: Expose a web server running on port 8000 -->
+        <!-- Example 1: Expose a web server running on port 8800 -->
         <function_calls>
         <invoke name="expose_port">
-        <parameter name="port">8000</parameter>
+        <parameter name="port">8800</parameter>
         </invoke>
         </function_calls>
 

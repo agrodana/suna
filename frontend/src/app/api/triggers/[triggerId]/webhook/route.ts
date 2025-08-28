@@ -14,7 +14,7 @@ export async function POST(
       }
     });
     
-    const backendUrl = process.env.BACKEND_URL || 'http://157.180.120.73:8000';
+    const backendUrl = process.env.BACKEND_URL || 'http://157.180.120.73:8800';
     const targetUrl = `${backendUrl}/triggers/${triggerId}/webhook`;
     const response = await fetch(targetUrl, {
       method: 'POST',

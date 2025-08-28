@@ -139,6 +139,6 @@ ENV CHROME_FLAGS="--single-process --no-first-run --no-default-browser-check --d
 RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-EXPOSE 7788 6080 5901 8000 8004 8080
+EXPOSE 7788 6080 5901 8800 8004 8080
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

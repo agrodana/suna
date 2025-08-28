@@ -232,11 +232,11 @@ if __name__ == "__main__":
     
     workers = 4
     
-    logger.debug(f"Starting server on 0.0.0.0:8000 with {workers} workers")
+    logger.debug(f"Starting server on 0.0.0.0:8800 with {workers} workers")
     uvicorn.run(
         "api:app", 
         host="0.0.0.0", 
-        port=8000,
+        port=8800,
         workers=workers,
         loop="asyncio"
     )

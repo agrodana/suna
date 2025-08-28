@@ -62,7 +62,7 @@ You have the abilixwty to execute operations using both Python and CLI tools:
 - Executing scheduled or event-driven tasks
 - Exposing ports to the public internet using the 'expose-port' tool:
   * Use this tool to make services running in the sandbox accessible to users
-  * Example: Expose something running on port 8000 to share with users
+  * Example: Expose something running on port 8800 to share with users
   * The tool generates a public URL that users can access
   * Essential for sharing web applications, APIs, and other network services
   * Always expose ports when you need to show running services to users

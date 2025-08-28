@@ -41,8 +41,8 @@ class ComputerUseTool(SandboxToolsBase):
         """Ensure API URL is initialized."""
         if not self._url_initialized:
             await self._ensure_sandbox()
-            # Get automation service URL using port 8000
-            preview_link = await self.sandbox.get_preview_link(8000)
+            # Get automation service URL using port 8800
+            preview_link = await self.sandbox.get_preview_link(8800)
             self.api_base_url = preview_link.url if hasattr(preview_link, 'url') else str(preview_link)
             self._url_initialized = True
             logging.info(f"Initialized Computer Use Tool with API URL: {self.api_base_url}")

@@ -1,7 +1,7 @@
 """
 Stripe Billing API implementation for Suna on top of Basejump. ONLY HAS SUPPOT FOR USER ACCOUNTS – no team accounts. As we are using the user_id as account_id as is the case with personal accounts. In personal accounts, the account_id equals the user_id. In team accounts, the account_id is unique.
 
-stripe listen --forward-to 157.180.120.73:8000/api/billing/webhook
+stripe listen --forward-to 157.180.120.73:8800/api/billing/webhook
 """
 
 from fastapi import APIRouter, HTTPException, Depends, Request
