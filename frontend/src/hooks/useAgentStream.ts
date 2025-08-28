@@ -264,19 +264,22 @@ export function useAgentStream(
         '{"type": "status", "status": "completed", "message": "Agent run completed successfully"}'
       ) {
         finalizeStream('completed', currentRunIdRef.current);
-        return;
+        // return;
       }
       if (
         processedData.includes('Run data not available for streaming') ||
         processedData.includes('Stream ended with status: completed')
       ) {
         finalizeStream('completed', currentRunIdRef.current);
-        return;
+        // return;
       }
 
       // --- Check for error messages first ---
       try {
         const jsonData = JSON.parse(processedData);
+
+        console.log(jsonData, "<<<<< jsonData");
+
         if (jsonData.status === 'error') {
           console.error('[useAgentStream] Received error status message:', jsonData);
           const errorMessage = jsonData.message || 'Unknown error occurred';
@@ -581,11 +584,16 @@ export function useAgentStream(
         // Agent is running, proceed to create the stream
         const cleanup = streamAgent(runId, {
           onMessage: (data) => {
+            console.log('[Stream onMessage fired]', data);
+            console.log('[threadIdRef.current]', threadIdRef.current);
             // Ignore messages if threadId changed while the EventSource stayed open
             if (threadIdRef.current !== threadId) return;
             // Ignore messages if this is not the current run ID
+            console.log('[currentRunIdRef.current]', currentRunIdRef.current);
             if (currentRunIdRef.current !== runId) return;
+            console.log('<<<<< masuk handleStreamMessage');
             handleStreamMessage(data);
+            console.log('<<<<< selesai handleStreamMessage');
           },
           onError: (err) => {
             if (threadIdRef.current !== threadId) return;
